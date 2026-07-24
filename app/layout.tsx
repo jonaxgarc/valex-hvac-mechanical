@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Residential heating and air conditioning for Inglewood and Greater Los Angeles. 25 years of experience. License 1146930 BBB.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/brand/valex-logo.png",
   },
   openGraph: {
     type: "website",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Residential heating and air conditioning serving Inglewood and Greater Los Angeles.",
     images: [
       {
-        url: "/og-v2.png",
+        url: "/og-v3.png",
         width: 1731,
         height: 909,
         alt: "Valex HVAC Mechanical — Home comfort, heated and cooled right.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Valex HVAC Mechanical | Heating & Air Conditioning",
     description:
       "Residential heating and air conditioning serving Inglewood and Greater Los Angeles.",
-    images: ["/og-v2.png"],
+    images: ["/og-v3.png"],
   },
 };
 
