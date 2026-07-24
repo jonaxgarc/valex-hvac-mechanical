@@ -210,7 +210,7 @@ body { background: var(--bg); color: var(--ink); }
   height: 54px;
   flex: 0 0 54px;
   border-radius: 0;
-  background: #fff url("/brand/valex-logo.png") center 3% / 64px auto no-repeat;
+  background: transparent url("/brand/valex-logo-v2.png") center 28% / 76px auto no-repeat;
   box-shadow: none;
 }
 .brand__mark svg { display: none; }
@@ -235,18 +235,18 @@ body { background: var(--bg); color: var(--ink); }
 .hero {
   min-height: 690px;
   padding: 76px 0 118px;
-  background:
-    linear-gradient(106deg, #075792 0%, #0b67aa 52%, transparent 52.15%),
-    #e7f2f8;
+  background: linear-gradient(135deg, #064b7e 0%, #075792 44%, #0c6baa 100%);
   color: #fff;
 }
 .hero::after {
   content: "";
   position: absolute;
-  inset: 0 0 0 50%;
+  inset: 0 0 0 37%;
   background:
-    linear-gradient(90deg, rgba(7, 87, 146, .08), transparent 22%),
+    linear-gradient(90deg, rgba(7, 87, 146, .18), transparent 35%),
     url("/portfolio/valex-project-36.jpg") center 58% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 16%, rgba(0,0,0,.72) 35%, #000 58%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 16%, rgba(0,0,0,.72) 35%, #000 58%);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 2; }
@@ -294,7 +294,8 @@ body { background: var(--bg); color: var(--ink); }
   height: clamp(190px, 18vw, 260px);
   border: 9px solid #fff;
   border-radius: 26px;
-  background: #fff url("/brand/valex-logo.png") center / contain no-repeat;
+  background: rgba(255,255,255,.92) url("/brand/valex-logo-v2.png") center / contain no-repeat;
+  backdrop-filter: blur(12px);
   box-shadow: 0 28px 60px -20px rgba(5, 47, 80, .65);
   transform: rotate(-2deg);
 }
@@ -409,13 +410,13 @@ body { background: var(--bg); color: var(--ink); }
 .site-footer {
   background: #075792;
 }
-.site-footer .brand__mark { background-color: #fff; border-radius: 8px; }
+.site-footer .brand__mark { background-color: rgba(255,255,255,.08); border-radius: 8px; }
 .site-footer .brand__name { color: #fff; }
 .site-footer .brand__sub { color: #8dd1f4; }
 .footer__bar { border-color: rgba(255,255,255,.18); }
 
 @media (max-width: 1000px) {
-  .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 59px auto; }
+  .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 70px auto; }
   .hero {
     background: #075792;
     padding-bottom: 120px;
@@ -434,7 +435,7 @@ body { background: var(--bg); color: var(--ink); }
 
 @media (max-width: 680px) {
   .header__inner { min-height: 68px; }
-  .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 55px auto; }
+  .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 64px auto; }
   .brand__name { font-size: 1rem; }
   .brand__sub { font-size: .52rem; }
   .hero { min-height: auto; padding-top: 36px; }
