@@ -48,9 +48,9 @@ export default function ProjectsPage() {
             <a href="/">Home</a>
             <a href="/#services">Services</a>
             <a href="/#why">About</a>
-            <a href="/projects" aria-current="page">Projects</a>
             <a href="/#area">Service Area</a>
             <a href="/#book">Contact</a>
+            <a className="nav__projects" href="/projects" aria-current="page">Viewing Projects <span aria-hidden="true">✓</span></a>
           </nav>
           <div className="header__cta">
             <a className="btn btn--ghost btn--phone" href="tel:+13109260495">
@@ -68,9 +68,9 @@ export default function ProjectsPage() {
             <a href="/">Home</a>
             <a href="/#services">Services</a>
             <a href="/#why">About</a>
-            <a href="/projects" aria-current="page">Projects</a>
             <a href="/#area">Service Area</a>
             <a href="/#book">Contact</a>
+            <a className="nav__projects" href="/projects" aria-current="page">Viewing Projects <span aria-hidden="true">✓</span></a>
           </nav>
           <div className="mobile-nav__cta">
             <a className="btn btn--primary btn--block" href="/#book">Book a Service</a>

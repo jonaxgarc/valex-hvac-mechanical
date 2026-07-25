@@ -296,6 +296,23 @@ body { background: var(--bg); color: var(--ink); }
   width: 22px; height: 3px; border-radius: 999px;
   background: #ffad18; transform: translateX(-50%);
 }
+.nav .nav__projects {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-left: 4px; padding: 9px 14px;
+  border: 1.5px solid #ffad18; border-radius: 10px;
+  color: #9a5800; background: #fff8e9;
+  transition: color .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
+}
+.nav .nav__projects:hover { color: #fff; background: #e88900; border-color: #e88900; transform: translateY(-1px); }
+.nav .nav__projects[aria-current="page"] { color: #fff; background: #075792; border-color: #075792; }
+.nav .nav__projects[aria-current="page"]::after { display: none; }
+.nav .nav__projects span { font-size: 1rem; line-height: 1; transition: transform .2s var(--ease); }
+.nav .nav__projects:hover span { transform: translateX(3px); }
+.mobile-nav .nav__projects {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 8px; padding: 14px 16px; border-radius: 12px;
+  background: #fff6df; border: 1px solid rgba(255,173,24,.55); color: #8b5200; font-weight: 700;
+}
 .header__cta { gap: 12px; flex: 0 0 auto; }
 .header__cta .btn--phone {
   min-height: 48px; padding: 0 20px; gap: 11px;
