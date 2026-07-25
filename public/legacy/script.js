@@ -44,6 +44,28 @@
     window.addEventListener("resize", onFlipScroll, { passive: true });
   }
 
+  /* ---------- Lightweight hero parallax ---------- */
+  if (heroEl && !reduceMotion && window.matchMedia("(min-width: 1001px)").matches) {
+    var parallaxTicking = false;
+    function applyHeroParallax() {
+      var rect = heroEl.getBoundingClientRect();
+      var visible = rect.bottom > 0 && rect.top < window.innerHeight;
+      if (visible) {
+        var progress = Math.max(0, Math.min(1, -rect.top / Math.max(rect.height, 1)));
+        heroEl.style.setProperty("--hero-parallax", (progress * 18).toFixed(1) + "px");
+      }
+      parallaxTicking = false;
+    }
+    function onHeroParallax() {
+      if (!parallaxTicking) {
+        parallaxTicking = true;
+        requestAnimationFrame(applyHeroParallax);
+      }
+    }
+    applyHeroParallax();
+    window.addEventListener("scroll", onHeroParallax, { passive: true });
+  }
+
   /* ---------- Mobile navigation ---------- */
   var toggle = document.querySelector("[data-nav-toggle]");
   var mobileNav = document.querySelector("[data-mobile-nav]");
@@ -102,10 +124,29 @@
         el.style.transitionDelay = Math.min(idx * 70, 420) + "ms";
         groups.set(parent, idx + 1);
         el.classList.add("is-visible");
+        if (el.classList.contains("step")) {
+          var steps = el.closest(".steps");
+          if (steps) steps.classList.add("is-drawn");
+        }
         io.unobserve(el);
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
     revealEls.forEach(function (el) { io.observe(el); });
+  }
+
+  /* Pause ambient section effects while off-screen. */
+  var animatedSections = document.querySelectorAll(".section");
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    var sectionIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle("is-onscreen", entry.isIntersecting);
+      });
+    }, { rootMargin: "18% 0px 18% 0px", threshold: 0 });
+    animatedSections.forEach(function (section) { sectionIo.observe(section); });
+  } else {
+    animatedSections.forEach(function (section) { section.classList.add("is-onscreen"); });
+    var processSteps = document.querySelector(".steps");
+    if (processSteps) processSteps.classList.add("is-drawn");
   }
 
   /* ---------- Animated counters ---------- */
