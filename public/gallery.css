@@ -512,6 +512,11 @@ body { background: var(--bg); color: var(--ink); }
 #area .eyebrow { color: #ffc04a; }
 #area .area__tags li { background: rgba(255,255,255,.11); color: #fff; border-color: rgba(255,255,255,.22); }
 #area .area__tags li:last-child { background: #fff; color: #075792; border-color: #fff; }
+#area .area__grid { grid-template-columns: minmax(0, 860px); justify-content: center; }
+#area .area__content { text-align: center; }
+#area .area__content .section__title { text-align: center; }
+#area .area__content .section__sub { max-width: 660px; margin-inline: auto; }
+#area .area__tags { justify-content: center; max-width: 720px; margin-inline: auto; margin-bottom: 30px; }
 
 .projects {
   background: #f3f7fa !important;
