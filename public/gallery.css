@@ -173,6 +173,68 @@
   .gallery-card, .gallery-card img, .gallery-filters button { transition: none; }
 }
 
+.projects-page { padding-top: 78px; background: #f3f7fa; }
+.projects-page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 0 78px;
+  background: radial-gradient(circle at 82% 22%, rgba(255,183,43,.22), transparent 28%), linear-gradient(125deg, #064b7e, #075792 58%, #0d72b6);
+  color: #fff;
+}
+.projects-page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 58%;
+  background: url("/portfolio/valex-project-19.jpg") center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 48%);
+  mask-image: linear-gradient(90deg, transparent, #000 48%);
+  opacity: .78;
+}
+.projects-page-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, .65fr);
+  align-items: end;
+  gap: clamp(30px, 8vw, 120px);
+}
+.projects-page-hero h1 {
+  max-width: 760px;
+  margin: 14px 0 0;
+  color: #fff;
+  font-size: clamp(3.2rem, 6vw, 6rem);
+  line-height: .95;
+  letter-spacing: -.055em;
+}
+.projects-page-hero p:not(.eyebrow) { max-width: 510px; margin: 0; color: rgba(255,255,255,.84); font-size: 1.05rem; line-height: 1.75; }
+.projects-page .projects { padding-top: 84px; }
+.projects-page .nav a[aria-current="page"] { color: #075792; }
+.projects-cta { padding: 36px 0 80px; background: #f3f7fa; }
+.projects-cta__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 42px 48px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 22px 54px -34px rgba(7,67,110,.48);
+}
+.projects-cta h2 { margin: 8px 0 0; color: #18232e; font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.045em; }
+.projects-footer { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .projects-page-hero__inner { grid-template-columns: 1fr; gap: 24px; }
+  .projects-page-hero::after { inset: 0; opacity: .24; -webkit-mask-image: none; mask-image: none; }
+}
+@media (max-width: 680px) {
+  .projects-page { padding-top: 68px; }
+  .projects-page-hero { padding: 62px 0 58px; }
+  .projects-page-hero h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+  .projects-page .projects { padding-top: 60px; }
+  .projects-cta__inner { display: grid; padding: 30px 24px; }
+}
+
 /* =========================================================
    VALEX LOGO-LED REDESIGN
    Inspired by the supplied blue-and-white service layout.
