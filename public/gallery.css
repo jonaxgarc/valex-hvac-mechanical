@@ -200,9 +200,14 @@
 body { background: var(--bg); color: var(--ink); }
 
 .site-header {
-  background: rgba(255, 255, 255, .96);
+  background: #fff;
   border-bottom: 1px solid rgba(7, 87, 146, .10);
   box-shadow: 0 10px 35px rgba(7, 61, 102, .08);
+  backdrop-filter: none;
+}
+.site-header[data-scrolled] {
+  background: #fff;
+  backdrop-filter: none;
 }
 .header__inner { min-height: 78px; }
 .brand__mark {
@@ -263,8 +268,8 @@ body { background: var(--bg); color: var(--ink); }
 .hero__title {
   max-width: 720px;
   color: #fff;
-  font-size: clamp(3.3rem, 6.3vw, 6.4rem);
-  line-height: .94;
+  font-size: clamp(2.9rem, 5vw, 5rem);
+  line-height: .98;
   letter-spacing: -.055em;
 }
 .hero__lede { max-width: 590px; margin-bottom: 30px; color: rgba(255,255,255,.88); font-size: 1.06rem; }
@@ -453,7 +458,7 @@ body { background: var(--bg); color: var(--ink); }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
   .medallion { right: 50%; bottom: 0; width: 270px; height: 200px; transform: translateX(50%) rotate(-2deg); }
-  .hero__title { font-size: clamp(3rem, 11vw, 5.6rem); }
+  .hero__title { font-size: clamp(2.6rem, 9vw, 4.4rem); }
 }
 
 @media (max-width: 680px) {
@@ -464,7 +469,7 @@ body { background: var(--bg); color: var(--ink); }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
   .medallion { width: 230px; height: 170px; border-width: 5px; }
-  .hero__title { font-size: clamp(2.7rem, 13vw, 4.1rem); }
+  .hero__title { font-size: clamp(2.3rem, 10vw, 3.45rem); }
   .stats { margin-top: -42px; }
   .stat { min-height: 118px; }
 }
