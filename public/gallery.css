@@ -316,7 +316,7 @@ body { background: var(--bg); color: var(--ink); }
   height: clamp(215px, 20vw, 290px);
   border: 7px solid rgba(255,255,255,.96);
   border-radius: 15px;
-  background: #fff url("/brand/valex-logo-v3.png") center / 100% auto no-repeat;
+  background: rgba(255,255,255,.96) url("/brand/valex-logo-v4-transparent.png") center / 100% auto no-repeat;
   backdrop-filter: blur(12px);
   box-shadow:
     0 30px 76px -38px rgba(5, 47, 80, .88),
