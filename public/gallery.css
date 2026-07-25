@@ -526,8 +526,14 @@ body { background: var(--bg); color: var(--ink); }
 .gallery-card__meta { color: #17354b; }
 
 .book {
-  background: #fff !important;
+  background: linear-gradient(135deg, #0b68aa, #075792) !important;
+  color: #fff;
 }
+.book .section__title { color: #fff; }
+.book .section__sub { color: rgba(255,255,255,.80); }
+.book .eyebrow { color: #ffc04a; }
+.book__facts li { color: rgba(255,255,255,.88); }
+.book__facts span { color: #ffc04a; }
 .book__phone {
   background: linear-gradient(135deg, #ffb629, #ed8d05);
   color: #3a2604;
@@ -539,7 +545,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 .site-footer {
-  background: #075792;
+  background: #063d67;
 }
 .site-footer .brand__mark { background-color: rgba(255,255,255,.08); border-radius: 8px; }
 .site-footer .brand__name { color: #fff; }

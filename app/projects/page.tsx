@@ -48,7 +48,6 @@ export default function ProjectsPage() {
             <a href="/">Home</a>
             <a href="/#services">Services</a>
             <a href="/#why">About</a>
-            <a href="/#area">Service Area</a>
             <a href="/#book">Contact</a>
             <a className="nav__projects" href="/projects" aria-current="page">Viewing Projects <span aria-hidden="true">✓</span></a>
           </nav>
@@ -68,7 +67,6 @@ export default function ProjectsPage() {
             <a href="/">Home</a>
             <a href="/#services">Services</a>
             <a href="/#why">About</a>
-            <a href="/#area">Service Area</a>
             <a href="/#book">Contact</a>
             <a className="nav__projects" href="/projects" aria-current="page">Viewing Projects <span aria-hidden="true">✓</span></a>
           </nav>
