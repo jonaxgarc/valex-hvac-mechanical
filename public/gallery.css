@@ -406,23 +406,96 @@ body { background: var(--bg); color: var(--ink); }
 .hero__visual {
   position: relative;
   min-height: 500px;
+  isolation: isolate;
+}
+.hero__visual::before,
+.hero__visual::after {
+  content: ""; position: absolute; pointer-events: none; z-index: -1;
+}
+.hero__visual::before {
+  inset: 9% -8% 3% -3%;
+  background:
+    linear-gradient(118deg, transparent 22%, rgba(255,180,32,.24) 37%, transparent 49%),
+    linear-gradient(62deg, transparent 48%, rgba(53,177,239,.22) 61%, transparent 74%);
+  filter: blur(22px);
+  opacity: .58;
+  animation: logoStreaks 12s ease-in-out infinite alternate;
+}
+.hero__visual::after {
+  inset: 18% -4% 10% 8%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 24% 54%, rgba(255,164,13,.26), transparent 43%),
+    radial-gradient(ellipse at 76% 45%, rgba(34,166,235,.28), transparent 44%);
+  filter: blur(32px);
+  opacity: .68;
+  animation: airWisps 9s ease-in-out infinite;
 }
 .medallion {
   position: absolute;
-  right: clamp(0px, 2vw, 26px);
-  bottom: 8px;
-  width: clamp(290px, 27vw, 390px);
+  right: clamp(-38px, -2vw, -12px);
+  bottom: -8px;
+  width: clamp(390px, 38vw, 550px);
   height: auto;
   aspect-ratio: 3 / 2;
-  border: 7px solid rgba(255,255,255,.96);
-  border-radius: 15px;
-  background: #565b59 url("/brand/valex-hero-logo.webp") center / cover no-repeat;
-  backdrop-filter: blur(12px);
-  box-shadow:
-    0 30px 76px -38px rgba(5, 47, 80, .88),
-    0 0 62px rgba(255, 177, 32, .22),
-    0 0 90px rgba(59, 164, 225, .16);
-  transform: rotate(-2deg);
+  border: 0;
+  border-radius: 0;
+  background: transparent url("/brand/valex-logo-v4-transparent.webp") center / contain no-repeat;
+  backdrop-filter: none;
+  box-shadow: none;
+  filter:
+    drop-shadow(-18px 10px 25px rgba(255,155,0,.20))
+    drop-shadow(18px 12px 28px rgba(26,145,220,.24))
+    drop-shadow(0 24px 28px rgba(1,26,48,.28));
+  transform: none;
+  translate: 0 0;
+  isolation: isolate;
+  animation: logoFloat 7s ease-in-out infinite;
+}
+.medallion::before {
+  content: ""; position: absolute; z-index: -1; inset: 7% 6% 12%;
+  border-radius: 48%;
+  background:
+    radial-gradient(circle at 27% 46%, rgba(255,166,18,.62), rgba(255,166,18,.13) 35%, transparent 61%),
+    radial-gradient(circle at 73% 45%, rgba(34,168,238,.62), rgba(34,168,238,.14) 36%, transparent 62%);
+  filter: blur(27px);
+  opacity: .64;
+  transform: scale(.96);
+  animation: logoPulse 3.8s ease-in-out infinite;
+}
+.medallion::after {
+  content: ""; position: absolute; z-index: 2; inset: -7%;
+  border-radius: 50%; pointer-events: none;
+  background:
+    radial-gradient(circle at 11% 48%, rgba(255,190,55,.95) 0 2px, transparent 3px),
+    radial-gradient(circle at 32% 5%, rgba(255,215,115,.80) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 88% 40%, rgba(80,198,255,.90) 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 92%, rgba(69,185,244,.76) 0 1.5px, transparent 3px),
+    radial-gradient(circle at 96% 67%, rgba(168,226,255,.66) 0 1px, transparent 2px);
+  opacity: .18;
+  animation: sparkOrbit 15s linear infinite;
+}
+@keyframes logoFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -4px; }
+}
+@keyframes logoPulse {
+  0%, 72%, 100% { opacity: .48; transform: scale(.94); }
+  84% { opacity: .82; transform: scale(1.04); }
+}
+@keyframes sparkOrbit {
+  0%, 58% { transform: rotate(0deg) scale(.98); opacity: .08; }
+  68% { opacity: .64; }
+  86% { opacity: .18; }
+  100% { transform: rotate(360deg) scale(1.02); opacity: .08; }
+}
+@keyframes logoStreaks {
+  from { transform: translate3d(-8px, 5px, 0) rotate(-1deg); opacity: .38; }
+  to { transform: translate3d(10px, -6px, 0) rotate(1deg); opacity: .68; }
+}
+@keyframes airWisps {
+  0%, 100% { transform: translate3d(-5px, 4px, 0) scale(.96); opacity: .44; }
+  50% { transform: translate3d(8px, -5px, 0) scale(1.05); opacity: .72; }
 }
 
 .stats {
@@ -601,7 +674,7 @@ body { background: var(--bg); color: var(--ink); }
   }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
-  .medallion { right: 50%; bottom: 0; width: 270px; height: auto; transform: translateX(50%) rotate(-2deg); }
+  .medallion { right: 50%; bottom: -4px; width: 390px; height: auto; transform: translateX(50%); }
   .hero__title { font-size: clamp(2.6rem, 9vw, 4.4rem); }
 }
 
@@ -613,7 +686,7 @@ body { background: var(--bg); color: var(--ink); }
   .site-header .brand__sub { margin-top: 5px; font-size: .52rem; letter-spacing: .13em; }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
-  .medallion { width: 230px; height: auto; border-width: 5px; }
+  .medallion { width: min(92vw, 350px); height: auto; border-width: 0; }
   .hero__title { font-size: clamp(2.05rem, 10vw, 3.2rem); line-height: 1.06; letter-spacing: .004em; }
   .steps { grid-template-columns: 1fr; }
   .step { min-height: 0; }
