@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+import LegacyScripts from "../LegacyScripts";
 
 export const metadata: Metadata = {
   title: "HVAC Projects | Valex HVAC Mechanical",
@@ -156,8 +156,7 @@ export default function ProjectsPage() {
         <button className="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" data-gallery-next aria-label="Next photo">›</button>
       </dialog>
 
-      <Script src="/legacy/script.js?v=7" strategy="afterInteractive" />
-      <Script src="/gallery.js?v=3" strategy="afterInteractive" />
+      <LegacyScripts sources={["/legacy/script.js?v=7", "/gallery.js?v=3"]} />
     </>
   );
 }

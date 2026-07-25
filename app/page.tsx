@@ -1,5 +1,5 @@
 import legacyDocument from "../valex-website/index.html?raw";
-import Script from "next/script";
+import LegacyScripts from "./LegacyScripts";
 
 const bodyMatch = legacyDocument.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
 const bodyMarkup = bodyMatch?.[1] ?? legacyDocument;
@@ -33,7 +33,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <div dangerouslySetInnerHTML={{ __html: bodyMarkup }} />
-      <Script src="/legacy/script.js?v=7" strategy="afterInteractive" />
+      <LegacyScripts sources={["/legacy/script.js?v=7"]} />
     </>
   );
 }
