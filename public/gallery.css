@@ -494,14 +494,34 @@ body { background: var(--bg); color: var(--ink); }
 }
 .why__item .ico--check { stroke: #ffc04a; }
 
-.steps { gap: 18px; }
+.steps { gap: 20px; padding-top: 28px; }
+.steps::before {
+  top: 26px; left: 6%; right: 6%; height: 2px;
+  background: linear-gradient(90deg, #ffad18 0%, #ffad18 30%, #208bd0 70%, #075792 100%);
+  opacity: .42;
+}
 .step {
+  min-height: 210px; margin-top: 0; padding: 43px 24px 26px;
   border: 1px solid rgba(7,87,146,.10);
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 16px 36px -30px rgba(7,67,110,.5);
+  text-align: left;
+  transition: transform .28s var(--ease), border-color .28s var(--ease), box-shadow .28s var(--ease);
 }
-.step__num { background: #176fae; color: #fff; }
+.step:hover { transform: translateY(-6px); border-color: rgba(23,111,174,.28); box-shadow: 0 24px 46px -30px rgba(7,67,110,.62); }
+.step__num {
+  position: absolute; top: -26px; left: 24px;
+  width: 52px; height: 52px; margin: 0;
+  border: 5px solid #fff; border-radius: 14px;
+  background: #176fae; color: #fff;
+  box-shadow: 0 12px 28px -13px rgba(7,87,146,.7);
+  font-size: 1.08rem; letter-spacing: .04em;
+}
+.step:nth-child(odd) .step__num { background: #ed9208; color: #fff; border-color: #fff; }
+.step:nth-child(even) .step__num { background: #0d78b9; color: #fff; border-color: #fff; }
+.step h3 { margin-bottom: 10px; font-size: 1.3rem; }
+.step p { line-height: 1.65; }
 
 #area {
   background:
@@ -553,6 +573,11 @@ body { background: var(--bg); color: var(--ink); }
 .site-footer .brand__sub { color: #8dd1f4; }
 .footer__bar { border-color: rgba(255,255,255,.18); }
 
+@media (max-width: 900px) {
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 48px; }
+  .steps::before { display: none; }
+}
+
 @media (max-width: 1180px) {
   .site-header .nav { display: none; }
   .site-header .header__cta .btn--phone { display: none; }
@@ -590,6 +615,8 @@ body { background: var(--bg); color: var(--ink); }
   .hero__visual { min-height: 220px; }
   .medallion { width: 230px; height: auto; border-width: 5px; }
   .hero__title { font-size: clamp(2.05rem, 10vw, 3.2rem); line-height: 1.06; letter-spacing: .004em; }
+  .steps { grid-template-columns: 1fr; }
+  .step { min-height: 0; }
   .stats { margin-top: -42px; }
   .stat { min-height: 118px; }
 }
