@@ -88,7 +88,7 @@
   });
 
   /* ---------- Scroll reveal (staggered) ---------- */
-  var revealEls = document.querySelectorAll("[data-reveal]");
+  var revealEls = document.querySelectorAll(".hero [data-reveal], .stats [data-reveal]");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   } else {
@@ -172,8 +172,15 @@
     function setError(field, msg) {
       var wrap = field.closest(".field");
       var err = wrap.querySelector("[data-error]");
-      if (msg) { wrap.classList.add("field--invalid"); if (err) err.textContent = msg; }
-      else { wrap.classList.remove("field--invalid"); if (err) err.textContent = ""; }
+      if (msg) {
+        wrap.classList.add("field--invalid");
+        field.setAttribute("aria-invalid", "true");
+        if (err) err.textContent = msg;
+      } else {
+        wrap.classList.remove("field--invalid");
+        field.removeAttribute("aria-invalid");
+        if (err) err.textContent = "";
+      }
     }
 
     form.querySelectorAll("input, select, textarea").forEach(function (input) {

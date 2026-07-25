@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "HVAC Projects | Valex HVAC Mechanical",
   description: "Browse real Valex HVAC installations across Greater Los Angeles.",
+  alternates: { canonical: "/projects" },
 };
 
 type Category = "brand" | "indoor" | "outdoor" | "ductwork" | "finishing";
@@ -30,8 +32,9 @@ export default function ProjectsPage() {
   return (
     <>
       <link rel="stylesheet" href="/legacy/styles.css?v=6" />
-      <link rel="stylesheet" href="/gallery.css?v=2" />
+      <link rel="stylesheet" href="/gallery.css?v=3" />
 
+      <a className="skip-link" href="#projects-main">Skip to projects</a>
       <header className="site-header" id="top" data-header>
         <div className="container header__inner">
           <a className="brand" href="/" aria-label="Valex HVAC Mechanical home">
@@ -50,7 +53,7 @@ export default function ProjectsPage() {
             <a href="/#book">Contact</a>
           </nav>
           <div className="header__cta">
-            <a className="btn btn--ghost" href="tel:+13109260495">Call (310) 926-0495</a>
+            <a className="btn btn--ghost btn--phone" href="tel:+13109260495">Call (310) 926-0495</a>
             <a className="btn btn--primary" href="/#book">Book a Service</a>
           </div>
           <button className="nav-toggle" data-nav-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
@@ -74,7 +77,7 @@ export default function ProjectsPage() {
       </header>
       <div className="scrim" data-scrim hidden />
 
-      <main className="projects-page">
+      <main className="projects-page" id="projects-main">
         <section className="projects-page-hero">
           <div className="container projects-page-hero__inner">
             <div>
@@ -153,8 +156,8 @@ export default function ProjectsPage() {
         <button className="gallery-lightbox__nav gallery-lightbox__nav--next" type="button" data-gallery-next aria-label="Next photo">›</button>
       </dialog>
 
-      <script src="/legacy/script.js?v=6" defer />
-      <script src="/gallery.js?v=2" defer />
+      <Script src="/legacy/script.js?v=7" strategy="afterInteractive" />
+      <Script src="/gallery.js?v=3" strategy="afterInteractive" />
     </>
   );
 }
