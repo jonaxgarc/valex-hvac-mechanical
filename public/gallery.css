@@ -307,11 +307,11 @@ body { background: var(--bg); color: var(--ink); }
   position: absolute;
   right: clamp(0px, 2vw, 26px);
   bottom: 8px;
-  width: clamp(240px, 23vw, 330px);
-  height: clamp(240px, 23vw, 330px);
+  width: clamp(290px, 27vw, 390px);
+  height: clamp(215px, 20vw, 290px);
   border: 7px solid rgba(255,255,255,.96);
   border-radius: 15px;
-  background: rgba(255,255,255,.92) url("/brand/valex-logo-v2.png") center / contain no-repeat;
+  background: #fff url("/brand/valex-logo-v3.png") center / 100% auto no-repeat;
   backdrop-filter: blur(12px);
   box-shadow:
     0 30px 76px -38px rgba(5, 47, 80, .88),
@@ -452,7 +452,7 @@ body { background: var(--bg); color: var(--ink); }
   }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
-  .medallion { right: 50%; bottom: 0; width: 230px; height: 230px; transform: translateX(50%) rotate(-2deg); }
+  .medallion { right: 50%; bottom: 0; width: 270px; height: 200px; transform: translateX(50%) rotate(-2deg); }
   .hero__title { font-size: clamp(3rem, 11vw, 5.6rem); }
 }
 
@@ -463,7 +463,7 @@ body { background: var(--bg); color: var(--ink); }
   .brand__sub { font-size: .52rem; }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
-  .medallion { width: 195px; height: 195px; border-width: 5px; }
+  .medallion { width: 230px; height: 170px; border-width: 5px; }
   .hero__title { font-size: clamp(2.7rem, 13vw, 4.1rem); }
   .stats { margin-top: -42px; }
   .stat { min-height: 118px; }
