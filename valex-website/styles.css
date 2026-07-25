@@ -291,6 +291,39 @@ button { font: inherit; cursor: pointer; }
 .section__note a { color: var(--cool-ink); font-weight: 600; border-bottom: 1px solid transparent; transition: border-color .2s; }
 .section__note a:hover { border-bottom-color: var(--cool-2); }
 
+/* ---------- Real project imagery woven through the page ---------- */
+.section-visual {
+  position: relative; overflow: hidden; margin: 0;
+  border: 1px solid var(--border); border-radius: 28px;
+  background: var(--surface); box-shadow: var(--shadow); isolation: isolate;
+}
+.section-visual::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, transparent 45%, rgba(10,29,49,.78) 100%);
+}
+.section-visual--warm { box-shadow: var(--shadow), 18px 18px 0 -8px rgba(245,194,78,.24); }
+.section-visual--cool { box-shadow: var(--shadow), -18px 18px 0 -8px rgba(98,180,228,.20); }
+.section-visual img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.015); filter: saturate(1.05) contrast(1.05);
+  transition: transform .9s var(--ease), filter .9s var(--ease);
+}
+.section-visual:hover img { transform: scale(1.06); filter: saturate(1.12) contrast(1.08); }
+.section-visual figcaption {
+  position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 22px;
+  display: flex; align-items: end; justify-content: space-between; gap: 20px;
+  color: #fff; text-shadow: 0 2px 18px rgba(0,0,0,.35);
+}
+.section-visual figcaption strong {
+  font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 2rem); line-height: .95;
+}
+.section-visual figcaption span { max-width: 330px; font-size: .9rem; text-align: right; color: rgba(255,255,255,.86); }
+.section-visual--wide { height: clamp(260px, 36vw, 430px); margin-bottom: clamp(34px, 5vw, 58px); }
+.section-visual--portrait { height: 330px; margin: 26px 0 30px; }
+.section-visual--process { height: clamp(250px, 32vw, 390px); margin: 0 auto clamp(42px, 6vw, 68px); max-width: 980px; }
+.section-visual--book { height: 250px; margin: 28px 0; border-color: rgba(28,42,32,.12); }
+
 /* ---------- Service cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .card {
@@ -367,6 +400,16 @@ button { font: inherit; cursor: pointer; }
 .area__tags li:last-child { color: var(--warm-ink); border-color: rgba(224,138,30,.45); background: var(--tint-warm); }
 
 .area__card { position: relative; border-radius: var(--r-xl); overflow: hidden; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.area__photo { position: relative; height: 380px; overflow: hidden; }
+.area__photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(9,29,49,.65)); pointer-events: none; }
+.area__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease), filter .9s var(--ease); filter: saturate(1.04) contrast(1.05); }
+.area__card--photo:hover .area__photo img { transform: scale(1.055); filter: saturate(1.1) contrast(1.08); }
+.area__photo-badge {
+  position: absolute; z-index: 2; left: 22px; bottom: 20px; padding: 9px 14px;
+  border-radius: 999px; color: #fff; background: rgba(11,64,104,.82);
+  border: 1px solid rgba(255,255,255,.28); backdrop-filter: blur(10px);
+  font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
 .area__map {
   position: relative; height: 300px;
   background:
@@ -486,9 +529,13 @@ button { font: inherit; cursor: pointer; }
    ========================================================= */
 .js .reveal { opacity: 1; transform: none; }
 .js .hero .reveal,
-.js .stats .reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s var(--ease), transform .55s var(--ease); }
+.js .stats .reveal,
+.js .section-visual.reveal,
+.js .area__card--photo.reveal { opacity: 0; transform: translateY(22px) scale(.985); transition: opacity .7s var(--ease), transform .8s var(--ease); }
 .js .hero .reveal.is-visible,
-.js .stats .reveal.is-visible { opacity: 1; transform: none; }
+.js .stats .reveal.is-visible,
+.js .section-visual.reveal.is-visible,
+.js .area__card--photo.reveal.is-visible { opacity: 1; transform: none; }
 
 /* =========================================================
    RESPONSIVE
@@ -509,6 +556,7 @@ button { font: inherit; cursor: pointer; }
   .area__content, .book__intro { text-align: center; }
   .area__tags, .why__intro .btn, .book__phone { justify-content: center; }
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .section-visual--portrait, .section-visual--book { max-width: 680px; margin-inline: auto; }
   .footer__grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -524,6 +572,12 @@ button { font: inherit; cursor: pointer; }
   .footer__bar { justify-content: center; text-align: center; }
   .fab-call { display: grid; }
   .book__phone { width: 100%; justify-content: center; }
+  .section-visual { border-radius: 20px; }
+  .section-visual figcaption { left: 18px; right: 18px; bottom: 17px; display: block; }
+  .section-visual figcaption span { display: none; }
+  .section-visual--portrait { height: 280px; }
+  .section-visual--book { height: 220px; }
+  .area__photo { height: 300px; }
 }
 
 /* =========================================================
