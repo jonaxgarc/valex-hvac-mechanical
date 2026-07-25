@@ -88,7 +88,7 @@
   });
 
   /* ---------- Scroll reveal (staggered) ---------- */
-  var revealEls = document.querySelectorAll(".hero [data-reveal], .stats [data-reveal], .section-visual[data-reveal], .area__card--photo[data-reveal]");
+  var revealEls = document.querySelectorAll(".hero [data-reveal], .stats [data-reveal], .section [data-reveal]");
   if (reduceMotion || !("IntersectionObserver" in window)) {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   } else {
