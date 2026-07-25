@@ -272,22 +272,38 @@ body { background: var(--bg); color: var(--ink); }
   background: #fff;
   backdrop-filter: none;
 }
-.header__inner { min-height: 78px; }
+.site-header .container { max-width: 1380px; padding-inline: clamp(24px, 3vw, 44px); }
+.header__inner { min-height: 96px; gap: clamp(18px, 2vw, 30px); }
 .brand__mark {
-  width: 54px;
-  height: 54px;
-  flex: 0 0 54px;
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
   border-radius: 0;
-  background: transparent url("/brand/valex-logo-v2.png") center 28% / 76px auto no-repeat;
+  background: transparent url("/brand/valex-logo-v2.png") center 28% / 87px auto no-repeat;
   box-shadow: none;
 }
 .brand__mark svg { display: none; }
 .brand__text { display: flex; }
-.brand__name { color: #232a31; letter-spacing: .065em; }
-.brand__sub { color: #176fae; letter-spacing: .12em; }
-.nav { gap: 25px; }
-.nav a { color: #334657; font-size: .84rem; }
+.site-header .brand { gap: 11px; flex: 0 0 auto; }
+.site-header .brand__name { color: #232a31; font-size: 1.9rem; line-height: .84; letter-spacing: .045em; }
+.site-header .brand__sub { margin-top: 7px; color: #176fae; font-size: .68rem; line-height: 1; letter-spacing: .18em; }
+.nav { flex: 1 1 auto; justify-content: center; gap: clamp(24px, 2.8vw, 48px); }
+.nav a { position: relative; color: #334657; font-size: .86rem; font-weight: 600; white-space: nowrap; }
 .nav a:hover { color: #075792; }
+.nav a[aria-current="page"] { color: #075792; font-weight: 700; }
+.nav a[aria-current="page"]::after {
+  content: ""; position: absolute; left: 50%; bottom: -12px;
+  width: 22px; height: 3px; border-radius: 999px;
+  background: #ffad18; transform: translateX(-50%);
+}
+.header__cta { gap: 12px; flex: 0 0 auto; }
+.header__cta .btn--phone {
+  min-height: 48px; padding: 0 20px; gap: 11px;
+  border: 2px solid #d9e1e7; border-radius: 14px;
+  background: #fff; color: #263746; box-shadow: none;
+}
+.header__cta .btn--phone:hover { border-color: #9fb3c2; background: #f7fafc; color: #075792; }
+.header__cta .btn--phone .ico { width: 18px; height: 18px; fill: currentColor; }
 .btn--primary {
   background: linear-gradient(135deg, #208bd0, #075792);
   color: #fff;
@@ -295,10 +311,13 @@ body { background: var(--bg); color: var(--ink); }
 }
 .btn--primary:hover { background: linear-gradient(135deg, #2d9bda, #075792); color: #fff; }
 .header__cta .btn--primary {
-  border-radius: 999px;
+  min-height: 52px; padding: 0 25px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #ffb72b, #ec9008);
-  color: #3d2704;
+  color: #fff; font-weight: 700;
+  box-shadow: 0 12px 24px -12px rgba(196,109,0,.72);
 }
+.header__cta .btn--primary:hover { background: linear-gradient(135deg, #f29d12, #d97d00); color: #fff; box-shadow: 0 16px 28px -12px rgba(196,109,0,.82); }
 
 .hero {
   min-height: 760px;
@@ -504,6 +523,13 @@ body { background: var(--bg); color: var(--ink); }
 .site-footer .brand__sub { color: #8dd1f4; }
 .footer__bar { border-color: rgba(255,255,255,.18); }
 
+@media (max-width: 1180px) {
+  .site-header .nav { display: none; }
+  .site-header .header__cta .btn--phone { display: none; }
+  .site-header .header__cta { margin-left: auto; }
+  .site-header .nav-toggle { display: block; margin-left: 4px; }
+}
+
 @media (max-width: 1000px) {
   .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 70px auto; }
   .hero {
@@ -525,10 +551,11 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 @media (max-width: 680px) {
-  .header__inner { min-height: 68px; }
+  .site-header .container { padding-inline: 20px; }
+  .header__inner { min-height: 72px; }
   .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 64px auto; }
-  .brand__name { font-size: 1rem; }
-  .brand__sub { font-size: .52rem; }
+  .site-header .brand__name { font-size: 1.28rem; }
+  .site-header .brand__sub { margin-top: 5px; font-size: .52rem; letter-spacing: .13em; }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
   .medallion { width: 230px; height: 170px; border-width: 5px; }
