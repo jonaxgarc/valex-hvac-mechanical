@@ -426,16 +426,17 @@ body { background: var(--bg); color: var(--ink); }
   border-radius: 50%;
   background:
     radial-gradient(ellipse at 24% 54%, rgba(255,164,13,.26), transparent 43%),
-    radial-gradient(ellipse at 76% 45%, rgba(34,166,235,.28), transparent 44%);
+    radial-gradient(ellipse at 76% 45%, rgba(34,166,235,.28), transparent 44%),
+    radial-gradient(circle at 52% 49%, rgba(255,255,255,.22), transparent 39%);
   filter: blur(32px);
   opacity: .68;
   animation: airWisps 9s ease-in-out infinite;
 }
 .medallion {
   position: absolute;
-  right: clamp(-38px, -2vw, -12px);
-  bottom: -8px;
-  width: clamp(390px, 38vw, 550px);
+  right: clamp(-76px, -4vw, -44px);
+  bottom: 42px;
+  width: clamp(500px, 49vw, 715px);
   height: auto;
   aspect-ratio: 3 / 2;
   border: 0;
@@ -443,25 +444,34 @@ body { background: var(--bg); color: var(--ink); }
   background: transparent url("/brand/valex-logo-v4-transparent.webp") center / contain no-repeat;
   backdrop-filter: none;
   box-shadow: none;
+  opacity: 1;
   filter:
-    drop-shadow(-18px 10px 25px rgba(255,155,0,.20))
-    drop-shadow(18px 12px 28px rgba(26,145,220,.24))
-    drop-shadow(0 24px 28px rgba(1,26,48,.28));
+    drop-shadow(0 0 2px rgba(255,255,255,.82))
+    drop-shadow(-20px 9px 29px rgba(255,155,0,.26))
+    drop-shadow(20px 10px 32px rgba(26,145,220,.32))
+    drop-shadow(0 26px 30px rgba(1,26,48,.34));
   transform: none;
   translate: 0 0;
   isolation: isolate;
   animation: logoFloat 7s ease-in-out infinite;
 }
 .medallion::before {
-  content: ""; position: absolute; z-index: -1; inset: 7% 6% 12%;
-  border-radius: 48%;
-  background:
-    radial-gradient(circle at 27% 46%, rgba(255,166,18,.62), rgba(255,166,18,.13) 35%, transparent 61%),
-    radial-gradient(circle at 73% 45%, rgba(34,168,238,.62), rgba(34,168,238,.14) 36%, transparent 62%);
-  filter: blur(27px);
+  content: ""; position: absolute; z-index: -1; inset: 2% 7% 10%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 8deg,
+    rgba(255,166,18,.08),
+    rgba(255,166,18,.78) 20%,
+    rgba(255,255,255,.58) 45%,
+    rgba(36,174,240,.82) 70%,
+    rgba(36,174,240,.08) 100%
+  );
+  -webkit-mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
+  mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
+  filter: blur(10px);
   opacity: .64;
-  transform: scale(.96);
-  animation: logoPulse 3.8s ease-in-out infinite;
+  transform: translate3d(0,0,0) rotate(0deg);
+  animation: logoRingSpin 18s linear infinite, logoRingPulse 4.6s ease-in-out infinite;
 }
 .medallion::after {
   content: ""; position: absolute; z-index: 2; inset: -7%;
@@ -477,11 +487,14 @@ body { background: var(--bg); color: var(--ink); }
 }
 @keyframes logoFloat {
   0%, 100% { translate: 0 0; }
-  50% { translate: 0 -4px; }
+  50% { translate: 0 -5px; }
 }
-@keyframes logoPulse {
-  0%, 72%, 100% { opacity: .48; transform: scale(.94); }
-  84% { opacity: .82; transform: scale(1.04); }
+@keyframes logoRingSpin {
+  to { transform: translate3d(0,0,0) rotate(360deg); }
+}
+@keyframes logoRingPulse {
+  0%, 68%, 100% { opacity: .48; }
+  82% { opacity: .82; }
 }
 @keyframes sparkOrbit {
   0%, 58% { transform: rotate(0deg) scale(.98); opacity: .08; }
@@ -745,7 +758,7 @@ body { background: var(--bg); color: var(--ink); }
   }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
-  .medallion { right: 50%; bottom: -4px; width: 390px; height: auto; transform: translateX(50%); }
+  .medallion { right: 46%; bottom: 38px; width: 510px; height: auto; transform: translateX(50%); }
   .hero__title { font-size: clamp(2.6rem, 9vw, 4.4rem); }
 }
 
@@ -757,7 +770,7 @@ body { background: var(--bg); color: var(--ink); }
   .site-header .brand__sub { margin-top: 5px; font-size: .52rem; letter-spacing: .13em; }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
-  .medallion { width: min(92vw, 350px); height: auto; border-width: 0; }
+  .medallion { right: 44%; bottom: 22px; width: min(106vw, 430px); height: auto; border-width: 0; }
   .hero__title { font-size: clamp(2.05rem, 10vw, 3.2rem); line-height: 1.06; letter-spacing: .004em; }
   .steps { grid-template-columns: 1fr; }
   .step { min-height: 0; }
