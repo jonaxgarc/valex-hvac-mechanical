@@ -78,12 +78,10 @@ const galleryMarkup = `
 
 const bodyMatch = legacyDocument.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
 const originalBody = bodyMatch?.[1] ?? legacyDocument;
-const bodyMarkup = originalBody
-  .replaceAll(
-    '<a href="#why">Why Valex</a>',
-    '<a href="#projects">Projects</a><a href="#why">Why Valex</a>',
-  )
-  .replace('<section class="section book" id="book">', `${galleryMarkup}<section class="section book" id="book">`);
+const bodyMarkup = originalBody.replace(
+  '<section class="section book" id="book">',
+  `${galleryMarkup}<section class="section book" id="book">`,
+);
 
 export default function Home() {
   return (

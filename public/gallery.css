@@ -233,8 +233,8 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 .hero {
-  min-height: 690px;
-  padding: 76px 0 118px;
+  min-height: 760px;
+  padding: 116px 0 148px;
   background: linear-gradient(135deg, #064b7e 0%, #075792 44%, #0c6baa 100%);
   color: #fff;
 }
@@ -243,10 +243,11 @@ body { background: var(--bg); color: var(--ink); }
   position: absolute;
   inset: 0 0 0 37%;
   background:
-    linear-gradient(90deg, rgba(7, 87, 146, .18), transparent 35%),
+    linear-gradient(90deg, rgba(7, 87, 146, .05), transparent 30%),
     url("/portfolio/valex-project-36.jpg") center 58% / cover no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 16%, rgba(0,0,0,.72) 35%, #000 58%);
-  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 16%, rgba(0,0,0,.72) 35%, #000 58%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 14%, rgba(0,0,0,.82) 32%, #000 52%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 14%, rgba(0,0,0,.82) 32%, #000 52%);
+  filter: brightness(1.12) contrast(1.08) saturate(1.04);
   z-index: 0;
 }
 .hero__inner { position: relative; z-index: 2; }
@@ -266,9 +267,13 @@ body { background: var(--bg); color: var(--ink); }
   line-height: .94;
   letter-spacing: -.055em;
 }
-.hero__lede { max-width: 570px; color: rgba(255,255,255,.84); font-size: 1.06rem; }
+.hero__lede { max-width: 590px; margin-bottom: 30px; color: rgba(255,255,255,.88); font-size: 1.06rem; }
 .hero__lede strong { color: #fff; }
-.hero__actions { align-items: center; }
+.hero__actions { align-items: center; gap: 14px; }
+.hero__actions .btn--lg {
+  min-height: 54px;
+  padding: 0 25px;
+}
 .hero__actions .btn--primary {
   background: linear-gradient(135deg, #ffb629, #ed8d05);
   color: #3a2604;
@@ -279,8 +284,20 @@ body { background: var(--bg); color: var(--ink); }
   background: rgba(255,255,255,.10);
   color: #fff;
 }
-.hero__trust li { color: rgba(255,255,255,.86); }
-.hero__trust .ico--check { stroke: #ffc149; }
+.hero__trust { margin-top: 20px; gap: 18px; }
+.hero__trust li { color: rgba(255,255,255,.9); }
+.trust-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 23px;
+  height: 23px;
+  flex: 0 0 23px;
+  border-radius: 50%;
+  background: rgba(255, 193, 73, .16);
+  color: #ffc149;
+  font-size: .82rem;
+  font-weight: 900;
+}
 .hero__glow { display: none; }
 .hero__visual {
   position: relative;
@@ -290,13 +307,16 @@ body { background: var(--bg); color: var(--ink); }
   position: absolute;
   right: clamp(0px, 2vw, 26px);
   bottom: 8px;
-  width: clamp(190px, 18vw, 260px);
-  height: clamp(190px, 18vw, 260px);
-  border: 9px solid #fff;
-  border-radius: 26px;
+  width: clamp(240px, 23vw, 330px);
+  height: clamp(240px, 23vw, 330px);
+  border: 7px solid rgba(255,255,255,.96);
+  border-radius: 15px;
   background: rgba(255,255,255,.92) url("/brand/valex-logo-v2.png") center / contain no-repeat;
   backdrop-filter: blur(12px);
-  box-shadow: 0 28px 60px -20px rgba(5, 47, 80, .65);
+  box-shadow:
+    0 30px 76px -38px rgba(5, 47, 80, .88),
+    0 0 62px rgba(255, 177, 32, .22),
+    0 0 90px rgba(59, 164, 225, .16);
   transform: rotate(-2deg);
 }
 
@@ -316,7 +336,7 @@ body { background: var(--bg); color: var(--ink); }
   gap: 12px;
 }
 .stat {
-  min-height: 132px;
+  min-height: 146px;
   border: 0 !important;
   border-radius: 16px;
   background: #fff;
@@ -331,6 +351,7 @@ body { background: var(--bg); color: var(--ink); }
   background: linear-gradient(90deg, #ffad18, #208bd0);
 }
 .stat__num { color: #075792; }
+.stat__label { max-width: 190px; line-height: 1.35; }
 
 .section { background: #fff; }
 .section:nth-of-type(even) { background: #f3f7fa; }
@@ -419,17 +440,19 @@ body { background: var(--bg); color: var(--ink); }
   .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 70px auto; }
   .hero {
     background: #075792;
-    padding-bottom: 120px;
+    min-height: auto;
+    padding: 82px 0 130px;
   }
   .hero::after {
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(7,87,146,.2), rgba(7,87,146,.96) 58%),
+      linear-gradient(180deg, rgba(7,87,146,.08), rgba(7,87,146,.92) 58%),
       url("/portfolio/valex-project-36.jpg") center / cover no-repeat;
+    filter: brightness(1.1) contrast(1.06);
   }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
-  .medallion { right: 50%; bottom: 0; transform: translateX(50%) rotate(-2deg); }
+  .medallion { right: 50%; bottom: 0; width: 230px; height: 230px; transform: translateX(50%) rotate(-2deg); }
   .hero__title { font-size: clamp(3rem, 11vw, 5.6rem); }
 }
 
@@ -438,9 +461,9 @@ body { background: var(--bg); color: var(--ink); }
   .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 64px auto; }
   .brand__name { font-size: 1rem; }
   .brand__sub { font-size: .52rem; }
-  .hero { min-height: auto; padding-top: 36px; }
-  .hero__visual { min-height: 200px; }
-  .medallion { width: 170px; height: 170px; border-width: 6px; }
+  .hero { min-height: auto; padding-top: 52px; }
+  .hero__visual { min-height: 220px; }
+  .medallion { width: 195px; height: 195px; border-width: 5px; }
   .hero__title { font-size: clamp(2.7rem, 13vw, 4.1rem); }
   .stats { margin-top: -42px; }
   .stat { min-height: 118px; }

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Residential heating and air conditioning serving Inglewood and Greater Los Angeles.",
     images: [
       {
-        url: "/og-v4.png",
+        url: "/og-v5.png",
         width: 1731,
         height: 909,
         alt: "Valex HVAC Mechanical — Home comfort, heated and cooled right.",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Valex HVAC Mechanical | Heating & Air Conditioning",
     description:
       "Residential heating and air conditioning serving Inglewood and Greater Los Angeles.",
-    images: ["/og-v4.png"],
+    images: ["/og-v5.png"],
   },
 };
 
