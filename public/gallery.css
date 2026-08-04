@@ -287,7 +287,7 @@ body { background: var(--bg); color: var(--ink); }
   height: 62px;
   flex: 0 0 62px;
   border-radius: 0;
-  background: transparent url("/brand/valex-logo-v2.png") center 28% / 87px auto no-repeat;
+  background: transparent url("/brand/valex-logo-v2.png") center 28% / 72px auto no-repeat;
   box-shadow: none;
 }
 .brand__mark svg { display: none; }
@@ -845,7 +845,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 
 @media (max-width: 1000px) {
-  .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 70px auto; }
+  .brand__mark { width: 50px; flex-basis: 50px; height: 50px; background-size: 58px auto; }
   .hero {
     background: #075792;
     min-height: auto;
@@ -867,7 +867,7 @@ body { background: var(--bg); color: var(--ink); }
 @media (max-width: 680px) {
   .site-header .container { padding-inline: 20px; }
   .header__inner { min-height: 72px; }
-  .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 64px auto; }
+  .brand__mark { width: 46px; flex-basis: 46px; height: 46px; background-size: 53px auto; }
   .site-header .brand__name { font-size: 1.28rem; }
   .site-header .brand__sub { margin-top: 5px; font-size: .52rem; letter-spacing: .13em; }
   .hero { min-height: auto; padding-top: 52px; }
