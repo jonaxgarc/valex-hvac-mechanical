@@ -179,7 +179,7 @@
   .gallery-card, .gallery-card img, .gallery-filters button { transition: none; }
 }
 
-.projects-page { padding-top: 78px; background: #f3f7fa; }
+.projects-page { padding-top: 0; background: #f3f7fa; }
 .projects-page-hero {
   position: relative;
   overflow: hidden;
@@ -191,7 +191,7 @@
   content: "";
   position: absolute;
   inset: 0 0 0 58%;
-  background: url("/portfolio/valex-project-19.jpg") center / cover no-repeat;
+  background: linear-gradient(rgba(3,33,58,.34), rgba(3,33,58,.34)), url("/portfolio/valex-project-19.jpg") center / cover no-repeat;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 48%);
   mask-image: linear-gradient(90deg, transparent, #000 48%);
   opacity: .78;
@@ -212,7 +212,8 @@
   line-height: .95;
   letter-spacing: -.055em;
 }
-.projects-page-hero p:not(.eyebrow) { max-width: 510px; margin: 0; color: rgba(255,255,255,.84); font-size: 1.05rem; line-height: 1.75; }
+.projects-page-hero .eyebrow { color: #ffc149; text-shadow: 0 1px 8px rgba(0,0,0,.3); }
+.projects-page-hero p:not(.eyebrow) { max-width: 510px; margin: 0; color: #fff; font-size: 1.05rem; font-weight: 600; line-height: 1.75; text-shadow: 0 2px 10px rgba(0,23,42,.72); }
 .projects-page .projects { padding-top: 84px; }
 .projects-page .nav a[aria-current="page"] { color: #075792; }
 .projects-cta { padding: 36px 0 80px; background: #f3f7fa; }
@@ -234,7 +235,7 @@
   .projects-page-hero::after { inset: 0; opacity: .24; -webkit-mask-image: none; mask-image: none; }
 }
 @media (max-width: 680px) {
-  .projects-page { padding-top: 68px; }
+  .projects-page { padding-top: 0; }
   .projects-page-hero { padding: 62px 0 58px; }
   .projects-page-hero h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
   .projects-page .projects { padding-top: 60px; }
