@@ -437,30 +437,30 @@ body { background: var(--bg); color: var(--ink); }
   content: ""; position: absolute; pointer-events: none; z-index: -1;
 }
 .hero__visual::before {
-  inset: 9% -8% 3% -3%;
+  inset: 15% 0 11% 6%;
   background:
-    linear-gradient(118deg, transparent 22%, rgba(255,180,32,.24) 37%, transparent 49%),
-    linear-gradient(62deg, transparent 48%, rgba(53,177,239,.22) 61%, transparent 74%);
-  filter: blur(22px);
-  opacity: .58;
+    linear-gradient(118deg, transparent 25%, rgba(255,180,32,.18) 38%, transparent 49%),
+    linear-gradient(62deg, transparent 50%, rgba(53,177,239,.17) 62%, transparent 73%);
+  filter: blur(28px);
+  opacity: .42;
   animation: logoStreaks 12s ease-in-out infinite alternate;
 }
 .hero__visual::after {
-  inset: 18% -4% 10% 8%;
+  inset: 23% 8% 18% 14%;
   border-radius: 50%;
   background:
-    radial-gradient(ellipse at 24% 54%, rgba(255,164,13,.26), transparent 43%),
-    radial-gradient(ellipse at 76% 45%, rgba(34,166,235,.28), transparent 44%),
-    radial-gradient(circle at 52% 49%, rgba(255,255,255,.22), transparent 39%);
-  filter: blur(32px);
-  opacity: .68;
+    radial-gradient(ellipse at 27% 52%, rgba(255,164,13,.22), transparent 39%),
+    radial-gradient(ellipse at 73% 47%, rgba(34,166,235,.23), transparent 40%),
+    radial-gradient(circle at 52% 49%, rgba(255,255,255,.16), transparent 34%);
+  filter: blur(38px);
+  opacity: .48;
   animation: airWisps 9s ease-in-out infinite;
 }
 .medallion {
   position: absolute;
-  right: clamp(-76px, -4vw, -44px);
-  bottom: 42px;
-  width: clamp(500px, 49vw, 715px);
+  right: clamp(-116px, -6.5vw, -84px);
+  bottom: 72px;
+  width: clamp(440px, 43vw, 630px);
   height: auto;
   aspect-ratio: 3 / 2;
   border: 0;
@@ -470,17 +470,19 @@ body { background: var(--bg); color: var(--ink); }
   box-shadow: none;
   opacity: 1;
   filter:
-    drop-shadow(0 0 2px rgba(255,255,255,.82))
-    drop-shadow(-20px 9px 29px rgba(255,155,0,.26))
-    drop-shadow(20px 10px 32px rgba(26,145,220,.32))
-    drop-shadow(0 26px 30px rgba(1,26,48,.34));
+    drop-shadow(0 0 2px rgba(255,255,255,.92))
+    drop-shadow(0 0 7px rgba(255,255,255,.24))
+    drop-shadow(-12px 5px 18px rgba(255,155,0,.20))
+    drop-shadow(12px 6px 19px rgba(26,145,220,.22))
+    drop-shadow(0 20px 24px rgba(1,26,48,.30));
   transform: none;
   translate: 0 0;
   isolation: isolate;
   animation: logoFloat 7s ease-in-out infinite;
 }
 .medallion::before {
-  content: ""; position: absolute; z-index: -1; inset: 2% 7% 10%;
+  content: ""; position: absolute; z-index: -1;
+  top: -2%; left: 18%; width: 64%; aspect-ratio: 1;
   border-radius: 50%;
   background: conic-gradient(
     from 8deg,
@@ -492,8 +494,8 @@ body { background: var(--bg); color: var(--ink); }
   );
   -webkit-mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
   mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
-  filter: blur(10px);
-  opacity: .64;
+  filter: blur(14px);
+  opacity: .38;
   transform: translate3d(0,0,0) rotate(0deg);
   animation: logoRingSpin 18s linear infinite, logoRingPulse 4.6s ease-in-out infinite;
 }
@@ -517,8 +519,8 @@ body { background: var(--bg); color: var(--ink); }
   to { transform: translate3d(0,0,0) rotate(360deg); }
 }
 @keyframes logoRingPulse {
-  0%, 68%, 100% { opacity: .48; }
-  82% { opacity: .82; }
+  0%, 68%, 100% { opacity: .28; }
+  82% { opacity: .48; }
 }
 @keyframes sparkOrbit {
   0%, 58% { transform: rotate(0deg) scale(.98); opacity: .08; }
@@ -860,7 +862,7 @@ body { background: var(--bg); color: var(--ink); }
   }
   .hero__visual { min-height: 250px; order: 1; }
   .hero__content { order: 2; padding-right: 0; }
-  .medallion { right: 46%; bottom: 38px; width: 510px; height: auto; transform: translateX(50%); }
+  .medallion { right: 46%; bottom: 60px; width: 455px; height: auto; transform: translateX(50%); }
   .hero__title { font-size: clamp(2.6rem, 9vw, 4.4rem); }
 }
 
@@ -872,7 +874,7 @@ body { background: var(--bg); color: var(--ink); }
   .site-header .brand__sub { margin-top: 5px; font-size: .52rem; letter-spacing: .13em; }
   .hero { min-height: auto; padding-top: 52px; }
   .hero__visual { min-height: 220px; }
-  .medallion { right: 44%; bottom: 22px; width: min(106vw, 430px); height: auto; border-width: 0; }
+  .medallion { right: 44%; bottom: 42px; width: min(94vw, 385px); height: auto; border-width: 0; }
   .hero__title { font-size: clamp(2.05rem, 10vw, 3.2rem); line-height: 1.06; letter-spacing: .004em; }
   .steps { grid-template-columns: 1fr; }
   .step { min-height: 0; }
