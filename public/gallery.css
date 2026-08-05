@@ -483,7 +483,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 .medallion::before {
   content: ""; position: absolute; z-index: -1;
-  top: -2%; left: 18%; width: 64%; aspect-ratio: 1;
+  top: 10%; left: 18%; width: 64%; aspect-ratio: 1;
   border-radius: 50%;
   background: conic-gradient(
     from 8deg,
