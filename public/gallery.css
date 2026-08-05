@@ -483,7 +483,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 .medallion::before {
   content: ""; position: absolute; z-index: -1;
-  top: 10%; left: 18%; width: 64%; aspect-ratio: 1;
+  inset: -4% -2% -6%;
   border-radius: 50%;
   background: conic-gradient(
     from 8deg,
@@ -493,12 +493,12 @@ body { background: var(--bg); color: var(--ink); }
     rgba(36,174,240,.82) 70%,
     rgba(36,174,240,.08) 100%
   );
-  -webkit-mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
-  mask: radial-gradient(circle, transparent 0 54%, #000 59% 68%, transparent 73%);
+  -webkit-mask: radial-gradient(ellipse, transparent 0 62%, #000 67% 74%, transparent 80%);
+  mask: radial-gradient(ellipse, transparent 0 62%, #000 67% 74%, transparent 80%);
   filter: blur(14px);
   opacity: .38;
   transform: translate3d(0,0,0) rotate(0deg);
-  animation: logoRingSpin 18s linear infinite, logoRingPulse 4.6s ease-in-out infinite;
+  animation: logoRingPulse 4.6s ease-in-out infinite;
 }
 .medallion::after {
   content: ""; position: absolute; z-index: 2; inset: -7%;
