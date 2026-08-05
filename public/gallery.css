@@ -370,11 +370,11 @@ body { background: var(--bg); color: var(--ink); }
   inset: 0 0 0 37%;
   background:
     linear-gradient(90deg, rgba(7, 87, 146, .05), transparent 30%),
-    url("/portfolio/valex-project-36.jpg") center 58% / cover no-repeat;
+    url("/portfolio/valex-project-36.jpg") center 54% / cover no-repeat;
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 14%, rgba(0,0,0,.82) 32%, #000 52%);
   mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.30) 14%, rgba(0,0,0,.82) 32%, #000 52%);
   filter: brightness(1.12) contrast(1.08) saturate(1.04);
-  transform: translate3d(0, var(--hero-parallax, 0px), 0) scale(1.035);
+  transform: translate3d(0, var(--hero-parallax, 0px), 0) scale(1.085);
   will-change: transform;
   z-index: 0;
 }
@@ -459,8 +459,8 @@ body { background: var(--bg); color: var(--ink); }
 .medallion {
   position: absolute;
   overflow: visible;
-  right: clamp(-116px, -6.5vw, -84px);
-  bottom: 72px;
+  right: 50%;
+  bottom: 50%;
   width: clamp(440px, 43vw, 630px);
   height: auto;
   aspect-ratio: 3 / 2;
@@ -476,13 +476,14 @@ body { background: var(--bg); color: var(--ink); }
     drop-shadow(-12px 5px 18px rgba(255,155,0,.20))
     drop-shadow(12px 6px 19px rgba(26,145,220,.22))
     drop-shadow(0 20px 24px rgba(1,26,48,.30));
-  transform: none;
+  transform: translate(50%, 50%);
   translate: 0 0;
   isolation: isolate;
   animation: logoFloat 7s ease-in-out infinite;
 }
 .medallion::before {
   content: ""; position: absolute; z-index: -1;
+  display: none;
   inset: -4% -2% -6%;
   border-radius: 50%;
   background: conic-gradient(
