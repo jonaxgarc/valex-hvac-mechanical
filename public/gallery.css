@@ -540,18 +540,19 @@ body { background: var(--bg); color: var(--ink); }
 .stats {
   position: relative;
   z-index: 5;
-  margin-top: -68px;
-  padding: 0 0 16px;
-  background: transparent;
+  margin-top: 0;
+  padding: 18px 0 20px;
+  border-block: 0;
+  background: linear-gradient(180deg, #eef6fb 0%, #f8fbfd 100%);
 }
 .stats__grid {
   position: relative;
   overflow: visible;
   border: 0;
-  border-radius: 20px;
+  border-radius: 14px;
   background: transparent;
   box-shadow: none;
-  gap: 12px;
+  gap: 10px;
 }
 .stats__grid::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
@@ -565,24 +566,28 @@ body { background: var(--bg); color: var(--ink); }
   88% { transform: translate3d(130%,0,0); opacity: 0; }
 }
 .stat { transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
-.stat:hover { transform: translateY(-4px); box-shadow: 0 18px 34px -28px rgba(7,87,146,.65); }
+.stat:hover { transform: translateY(-3px); box-shadow: 0 14px 26px -22px rgba(7,87,146,.58); }
 .stat {
-  min-height: 146px;
+  min-height: 92px;
+  padding: 16px 14px;
   border: 0 !important;
-  border-radius: 16px;
+  border-radius: 12px;
   background: #fff;
-  box-shadow: 0 18px 38px -24px rgba(7, 67, 110, .62);
+  box-shadow: 0 10px 24px -20px rgba(7, 67, 110, .48);
 }
 .stat::before {
   content: "";
-  width: 30px;
-  height: 4px;
-  margin-bottom: 11px;
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 0 auto 7px;
   border-radius: 999px;
   background: linear-gradient(90deg, #ffad18, #208bd0);
 }
 .stat__num { color: #075792; }
-.stat__label { max-width: 190px; line-height: 1.35; }
+.stats .stat__num { font-size: clamp(1.7rem, 2.7vw, 2.15rem); line-height: 1; }
+.stats .stat__num--sm { font-size: clamp(1.25rem, 2vw, 1.55rem); }
+.stat__label { max-width: 190px; margin-top: 4px; line-height: 1.25; font-size: .82rem; }
 
 .section { background: #fff; overflow: hidden; isolation: isolate; }
 .section > .container { position: relative; z-index: 2; }
@@ -878,6 +883,6 @@ body { background: var(--bg); color: var(--ink); }
   .hero__title { font-size: clamp(2.05rem, 10vw, 3.2rem); line-height: 1.06; letter-spacing: .004em; }
   .steps { grid-template-columns: 1fr; }
   .step { min-height: 0; }
-  .stats { margin-top: -42px; }
-  .stat { min-height: 118px; }
+  .stats { margin-top: 0; padding-block: 14px 16px; }
+  .stat { min-height: 88px; padding: 14px 10px; }
 }
