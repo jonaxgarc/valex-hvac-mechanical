@@ -458,6 +458,7 @@ body { background: var(--bg); color: var(--ink); }
 }
 .medallion {
   position: absolute;
+  overflow: visible;
   right: clamp(-116px, -6.5vw, -84px);
   bottom: 72px;
   width: clamp(440px, 43vw, 630px);
